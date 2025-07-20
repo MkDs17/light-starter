@@ -35,4 +35,4 @@ jobs:
       - name: Deploy Cloudflare Page
         working-directory: packages/react-app
         run: |
-          npx wrangler pages deploy dist --project-name=react-starter --branch=${{ github.ref_name }} --verbose
+          npx wrangler pages deploy dist --project-name=react-starter --branch=${{ github.ref_name }}
