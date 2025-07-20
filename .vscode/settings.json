@@ -1,0 +1,37 @@
+{
+  "editor.minimap.enabled": false,
+  "window.zoomLevel": -1,
+  "workbench.colorTheme": "Material Theme Palenight High Contrast",
+  "workbench.iconTheme": "material-icon-theme",
+  "files.autoSave": "off",
+  "emmet.includeLanguages": {
+    "twig": "html",
+    "javascript": "javascriptreact",
+    "html": "javascriptreact",
+    "markdown": "html",
+  },
+  "javascript.validate.enable": false,
+  "explorer.confirmDelete": false,
+  "eslint.validate": [
+    "javascript"
+  ],
+  "diffEditor.ignoreTrimWhitespace": false,
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "files.exclude": {
+    "**/.git": false
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always",
+    "source.organizeImports": "always",
+    "source.addMissingImports.ts": "always",
+    "source.removeUnusedImports": "always"
+  },
+}
