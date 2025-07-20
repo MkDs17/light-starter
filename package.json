@@ -1,10 +1,10 @@
 {
-  "name": "react-starter",
+  "name": "light-starter",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "format": "biome check --write",
-    "build:react-app": "npm run build -w=@react-starter/react-app"
+    "build:react-app": "npm run build -w=@light-starter/react-app"
   },
   "dependencies": {
     "@types/node": "24.0.4",

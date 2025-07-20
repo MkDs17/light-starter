@@ -1,4 +1,4 @@
-name: Deploy react-starter to Cloudflare Pages
+name: Deploy light-starter to Cloudflare Pages
 
 on:
   push:
@@ -35,4 +35,4 @@ jobs:
       - name: Deploy Cloudflare Page
         working-directory: packages/react-app
         run: |
-          npx wrangler pages deploy dist --project-name=react-starter --branch=${{ github.ref_name }}
+          npx wrangler pages deploy dist --project-name=light-starter --branch=${{ github.ref_name }}
