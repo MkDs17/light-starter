@@ -11,8 +11,18 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "packages/react-app/src/*"
+      ],
+    }
   },
-  "include": ["packages"],
-  "exclude": ["node_modules", "dist"]
+  "include": [
+    "packages"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }

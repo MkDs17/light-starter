@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import logo from '../assets/images/logo512.png'
 import { useI18n } from '../hooks/use-i18n'
 import Layout from '../layout'
@@ -8,33 +7,33 @@ export default function Root() {
 
   return (
     <Layout>
-      <Container>
+      <div className="home">
         <h6>{t('root.title')}</h6>
         <p>{t('root.message')}</p>
         <img alt="" src={logo} />
-      </Container>
+      </div>
     </Layout>
   )
 }
 
-const Container = styled.div`
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  justify-content: center;
-  width: 100%;
+// const Container = styled.div`
+//   align-items: center;
+//   display: flex;
+//   flex-direction: column;
+//   gap: 16px;
+//   justify-content: center;
+//   width: 100%;
 
-  & > h6 {
-    font-size: 48px;
-  }
+//   & > h6 {
+//     font-size: 48px;
+//   }
 
-  & > p {
-    font-size: 24px;
-  }
+//   & > p {
+//     font-size: 24px;
+//   }
 
-  & > img {
-    height: 72px;
-    width: auto;
-  }
-`
+//   & > img {
+//     height: 72px;
+//     width: auto;
+//   }
+// `

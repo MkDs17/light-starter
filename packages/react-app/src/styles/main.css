@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply font-inter;
+}
+
+.layout {
+  @apply flex flex-col min-h-screen bg-gray-900;
+}
+
+header {
+  @apply absolute inset-x-0 top-0 z-50;
+}

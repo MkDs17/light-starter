@@ -1,5 +1,3 @@
-import styled from 'styled-components'
-
 import { useI18n } from '../../hooks/use-i18n'
 import Layout from '../../layout'
 
@@ -8,27 +6,27 @@ export default function NotFound() {
 
   return (
     <Layout>
-      <Container>
+      <div className="not-found">
         <h6>{t('not-found.title')}</h6>
         <p>{t('not-found.message')}</p>
-      </Container>
+      </div>
     </Layout>
   )
 }
 
-const Container = styled.div`
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  justify-content: center;
-  width: 100%;
+// const Container = styled.div`
+//   align-items: center;
+//   display: flex;
+//   flex-direction: column;
+//   gap: 16px;
+//   justify-content: center;
+//   width: 100%;
 
-  & > h6 {
-    font-size: 48px;
-  }
+//   & > h6 {
+//     font-size: 48px;
+//   }
 
-  & > p {
-    font-size: 24px;
-  }
-`
+//   & > p {
+//     font-size: 24px;
+//   }
+// `

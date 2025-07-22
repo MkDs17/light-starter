@@ -1,9 +1,7 @@
-import styled from 'styled-components'
-
 export default function Footer() {
-  return <Container></Container>
+  return <div className="footer"></div>
 }
 
-const Container = styled.footer`
-  width: 100%;
-`
+// const Container = styled.footer`
+//   width: 100%;
+// `
