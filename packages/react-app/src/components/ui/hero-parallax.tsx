@@ -101,14 +101,16 @@ export const HeroParallax = ({
 
 export const Header = () => {
   return (
-    <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0">
-      <h1 className="text-2xl md:text-7xl font-bold dark:text-white">
-        The Ultimate <br /> development studio
+    <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full left-0 top-0">
+      <h1 className="text-2xl md:text-7xl font-bold text-black dark:text-white">
+        Ne rêvez plus votre site.
       </h1>
-      <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200">
-        We build beautiful products with the latest technologies and frameworks.
-        We are a team of passionate developers and designers that love to build
-        amazing products.
+      <h2 className="text-2xl md:text-5xl font-semibold text-black dark:text-white">
+        Créez-le aujourd’hui.
+      </h2>
+      <p className="max-w-2xl text-base md:text-xl mt-8 text-black dark:text-neutral-200">
+        Services professionnels de développement web adaptés à vos besoins.
+        Obtenez un site web performant qui génère des résultats.
       </p>
     </div>
   )
@@ -145,7 +147,7 @@ export const ProductCard = ({
           alt={product.title}
         />
       </a>
-      <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div>
+      <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-white/80 dark:bg-black pointer-events-none"></div>
       <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">
         {product.title}
       </h2>

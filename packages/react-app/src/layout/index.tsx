@@ -1,8 +1,13 @@
 import React from 'react'
 
+import visibilityImg from '@/assets/images/visibility.webp'
+import { BentoGrid, BentoGridItem } from '@/components/ui/bento-grid'
+import { Carousel } from '@/components/ui/carousel'
 import { HeroParallax } from '@/components/ui/hero-parallax'
-import { HoverEffect } from '@/components/ui/hover-effect'
 import { ContainerScroll } from '@/components/ui/scroll-container'
+import { Title } from '@/components/ui/title'
+import { Eye, TrendingUp } from 'lucide-react'
+import Footer from './footer'
 import Header from './header'
 
 interface IProps {
@@ -37,17 +42,94 @@ export const products = [
   },
 ]
 
+const Skeleton = () => (
+  <div className="w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100"></div>
+)
+
+const items = [
+  {
+    title: 'Visibilité et crédibilité',
+    description:
+      'Un site web bien conçu renforce votre image de marque et inspire confiance à vos clients. Il sert de vitrine accessible 24/7.',
+    header: (
+      <img
+        src={visibilityImg}
+        className="w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-200 dark:from-neutral-900 dark:to-neutral-800 to-neutral-100 object-cover"
+      />
+    ),
+    icon: <Eye className="icon h-4 w-4" />,
+  },
+  {
+    title: 'Acquisition et conversion',
+    description:
+      'Attirez de nouveaux prospects grâce au référencement (SEO) et convertissez-les en clients avec un parcours optimisé.',
+    header: <Skeleton />,
+    icon: <TrendingUp className="icon" />,
+  },
+  {
+    title: 'Contrôle total',
+    description:
+      'Contrairement aux réseaux sociaux, votre site vous appartient. Vous maîtrisez son contenu, son design et son évolution.',
+    header: <Skeleton />,
+  },
+  {
+    title: 'Rentabilité',
+    description:
+      'Un site bien optimisé peut devenir un canal de vente puissant, réduisant votre dépendance aux publicités payantes.',
+    header: <Skeleton />,
+  },
+  {
+    title: 'Connectivité et automatisation',
+    description:
+      "Intégrez des outils comme la prise de rendez-vous, les paiements en ligne ou encore l'automatisation des emails pour gagner du temps.",
+
+    header: <Skeleton />,
+  },
+]
+
 export default function Layout({ children }: IProps) {
   return (
     // <div className="layout">
     //   <Main>{children}</Main>
     //   <Footer />
     // </div>
-    <div className="bg-slate-950 text-white font-sans overflow-x-hidden">
+    <div className="bg-white/80 dark:bg-slate-950 text-white font-sans relative">
       {/* Navbar */}
       <Header />
 
       <HeroParallax products={products} />
+
+      <section
+        id="services"
+        className="py-24 px-6 max-w-7xl mx-auto text-center"
+      >
+        <Title
+          type={'h2'}
+          text="Nos services"
+          subtitle="Des solutions sur mesure pour vos besoins numériques."
+        />
+        <Carousel />
+      </section>
+
+      <section id="values" className="py-24 px-6 max-w-7xl mx-auto text-center">
+        <Title
+          type={'h2'}
+          text="Présence digitale"
+          subtitle="Les avantages incontournables de créer et posséder votre propre site internet."
+        />
+        <BentoGrid className="max-w-6xl mx-auto">
+          {items.map((item, i) => (
+            <BentoGridItem
+              key={i}
+              title={item.title}
+              description={item.description}
+              header={item.header}
+              className={i === 3 || i === 6 ? 'md:col-span-2' : ''}
+              icon={item.icon}
+            />
+          ))}
+        </BentoGrid>
+      </section>
 
       {/* Scroll Showcase */}
       <ContainerScroll
@@ -64,30 +146,6 @@ export default function Layout({ children }: IProps) {
         <img src="/mockup.png" alt="Demo" className="rounded-2xl shadow-xl" />
       </ContainerScroll>
 
-      {/* Bento Grid / Features */}
-      <section id="features" className="py-24 px-6 max-w-7xl mx-auto">
-        <HoverEffect
-          items={[
-            {
-              title: 'Blocs modulaires',
-              description: 'Composants flexibles pour chaque section.',
-            },
-            {
-              title: 'Effets animés',
-              description: 'Des transitions et interactions douces.',
-            },
-            {
-              title: 'Code minimaliste',
-              description: 'Intégration rapide et propre.',
-            },
-            {
-              title: 'Design tendance',
-              description: "Look 2025 prêt à l'emploi.",
-            },
-          ]}
-        />
-      </section>
-
       {/* À propos */}
       <section id="about" className="py-24 px-6 max-w-3xl mx-auto text-center">
         <h2 className="text-3xl font-bold mb-4">Qui suis-je ?</h2>
@@ -98,10 +156,7 @@ export default function Layout({ children }: IProps) {
         </p>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-white/10 py-6 px-6 text-center text-sm text-white/40">
-        © 2025 Aether. Tous droits réservés.
-      </footer>
+      <Footer />
     </div>
   )
 }
